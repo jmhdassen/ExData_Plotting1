@@ -20,13 +20,13 @@ data200702 <- data[data$Datetime>="2007-02-01" & data$Datetime<"2007-02-03",]
 ## Create plot in PNG file.
 png(file="plot4.png", width = 480, height = 480)
 par(mfrow = c(2, 2))
-plot(data200702$Datetime, data200702$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatt)")
-plot(data200702$Datetime, data200702$Voltage, type="l", xlab="", ylab="Voltage")
+plot(data200702$Datetime, data200702$Global_active_power, type="l", xlab="", ylab="Global Active Power")
+plot(data200702$Datetime, data200702$Voltage, type="l", xlab="datetime", ylab="Voltage")
 plot(data200702$Datetime, data200702$Sub_metering_1, type="l", xlab="", ylab="Energy Submetering")
 points(data200702$Datetime, data200702$Sub_metering_2, type="l", col="red")
 points(data200702$Datetime, data200702$Sub_metering_3, type="l", col="blue")
-legend("topright", lty = 1, col = c("black","red", "blue"),legend=c("Submetering1","Submetering2","Submetering3"))
-plot(data200702$Datetime, data200702$Global_reactive_power, type="l", xlab="", ylab="Global Reactive Power (kilowatt)")
+legend("topright", lty = 1, col = c("black","red", "blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+plot(data200702$Datetime, data200702$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 ##title(main="")
 dev.off()
 

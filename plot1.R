@@ -18,7 +18,7 @@ data$Datetime <- strptime(paste(data$Date, data$Time) ,"%d/%m/%Y %H:%M:%S")
 data200702 <- data[data$Datetime>="2007-02-01" & data$Datetime<"2007-02-03",]
 ## Create plot in PNG file.
 png(file="plot1.png", width = 480, height = 480)
-hist(data200702$Global_active_power, col="red", xlab="Global Active Power (kilowatt)", ylab= "Frequency", main="Global Active Power")
+hist(data200702$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", ylab= "Frequency", main="Global Active Power")
 ##title(main="")
 dev.off()
 
